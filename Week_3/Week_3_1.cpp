@@ -54,30 +54,30 @@ int main() {
 	int N; cin >> N;
 
 	while (N--) {
-		string str; cin >> str;
+		string cmd; cin >> cmd;
 
-		if (str == "size") {
+		if (cmd == "size") {
 			cout << S.size_() << '\n';
 		}
 
-		else if (str == "empty") {
+		else if (cmd == "empty") {
 			cout << S.empty() << '\n';
 		}
 
-		else if (str == "full") {
+		else if (cmd == "full") {
 			cout << S.full() << '\n';
 		}
 
-		else if (str == "top") {
+		else if (cmd == "top") {
 			S.top();
 		}
 
-		else if (str == "push") {
+		else if (cmd == "push") {
 			int x; cin >> x;
 			S.push(x);
 		}
 
-		else if (str == "pop") {
+		else if (cmd == "pop") {
 			S.pop();
 		}
 	}
