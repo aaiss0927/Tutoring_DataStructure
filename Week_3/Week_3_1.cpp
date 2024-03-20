@@ -17,11 +17,11 @@ public:
 	}
 
 	bool empty() {
-		return tos == 0;
+		return (tos == 0);
 	}
 
 	bool full() {
-		return tos == t;
+		return (tos == t);
 	}
 
 	void top() {
@@ -29,6 +29,7 @@ public:
 			cout << "-1\n";
 			return;
 		}
+
 		cout << arr[tos - 1] << '\n';
 	}
 
@@ -37,14 +38,11 @@ public:
 			cout << "FULL\n";
 			return;
 		}
+
 		arr[tos++] = x;
 	}
 
 	void pop() {
-		if (empty()) {
-			cout << "-1\n";
-			return;
-		}
 		top();
 		tos--;
 	}
