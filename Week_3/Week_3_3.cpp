@@ -90,7 +90,7 @@ public:
     }
 
     bool empty() {
-        return size == 0;
+        return (size == 0);
     }
 
     void top() {
