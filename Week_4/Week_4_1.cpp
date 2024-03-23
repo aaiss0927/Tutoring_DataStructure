@@ -57,7 +57,7 @@ public:
 		node* new_node = new node(value);
 
 		if (empty()) {
-			f = r = new_node;
+			f = r = new_node;    // 예외
 		}
 
 		else {
@@ -77,7 +77,7 @@ public:
 		node* del_node = f;
 
 		if (s == 1) {
-			f = r = nullptr;
+			f = r = nullptr;    // 예외
 		}
 
 		else {
