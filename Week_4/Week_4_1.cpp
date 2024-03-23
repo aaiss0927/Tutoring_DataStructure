@@ -19,7 +19,7 @@ class listQueue {
 private:
 	node* f;    // front(head)
 	node* r;    // rear(tail)
-	int s;
+	int s;      // 큐의 크기
 
 public:
 	listQueue() {
