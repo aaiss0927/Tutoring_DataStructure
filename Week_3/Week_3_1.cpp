@@ -43,6 +43,11 @@ public:
 	}
 
 	void pop() {
+		if (empty()) {
+			cout << "-1\n";
+			return;
+		}
+		
 		top();
 		tos--;
 	}
