@@ -3,11 +3,11 @@ using namespace std;
 
 class arrayQueue {
 private:
-	int* arr;
-	int capacity;
-	int f;
-	int r;
-	int s;
+	int* arr;       // 배열
+	int capacity;   // 큐의 최대 크기
+	int f;          // front의 index
+	int r;          // rear의 index + 1
+	int s;          // 큐의 크기
 
 public:
 	arrayQueue(int capacity) {
