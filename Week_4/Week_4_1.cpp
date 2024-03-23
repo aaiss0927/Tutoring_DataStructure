@@ -85,6 +85,7 @@ public:
 		}
 
 		cout << del_node->value << '\n';
+		// del_node->next = nullptr;
 		delete del_node;
 		s--;
 	}
