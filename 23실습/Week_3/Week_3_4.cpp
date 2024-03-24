@@ -2,8 +2,6 @@
 #include <string>
 using namespace std;
 
-int t;
-
 class Stack {
 private:
 	char arr[100]{};
