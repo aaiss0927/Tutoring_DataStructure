@@ -1,13 +1,13 @@
 #include <iostream>
 using namespace std;
 
-class node {
+class Node {
 private:
 	int value;
-	node* next;
-	
+	Node* next;
+
 public:
-	node(int value) {
+	Node(int value) {
 		this->value = value;
 		next = nullptr;
 	}
@@ -17,8 +17,8 @@ public:
 
 class listQueue {
 private:
-	node* f;    // front(head)
-	node* r;    // rear(tail)
+	Node* f;    // front(head)
+	Node* r;    // rear(tail)
 	int s;      // 큐의 크기
 
 public:
@@ -54,7 +54,7 @@ public:
 	}
 
 	void enqueue(int value) {
-		node* new_node = new node(value);
+		Node* new_node = new Node(value);
 
 		if (empty()) {
 			f = r = new_node;    // 예외
@@ -74,7 +74,7 @@ public:
 			return;
 		}
 
-		node* del_node = f;
+		Node* del_node = f;
 
 		if (s == 1) {
 			f = r = nullptr;    // 예외
