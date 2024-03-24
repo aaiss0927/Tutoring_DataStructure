@@ -90,12 +90,12 @@ int main() {
 
 		int N; cin >> N;
 
-		for (int j = 0; j < N; j++) {
+		for (int i = 0; i < N; i++) {
 			int a; cin >> a;
 			Q1.enqueue(a);
 		}
 
-		for (int j = 0; j < N; j++) {
+		for (int i = 0; i < N; i++) {
 			int a; cin >> a;
 			Q2.enqueue(a);
 		}
@@ -103,8 +103,8 @@ int main() {
 		int score_1 = 0;
 		int score_2 = 0;
 
-		for (int j = 1; j <= N; j++) {
-			cout << "Round" << j << " ";
+		for (int i = 1; i <= N; i++) {
+			cout << "Round" << i << " ";
 
 			int extra_hp = 0;
 
