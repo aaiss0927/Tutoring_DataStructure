@@ -6,7 +6,7 @@ int t;
 
 class Stack {
 private:
-	string arr[100]{};
+	char arr[100]{};
 	int tos;
 public:
 	Stack() {
@@ -21,7 +21,7 @@ public:
 		return (tos == 0);
 	}
 
-	string top() {
+	char top() {
 		return arr[tos - 1];
 	}
 
@@ -50,7 +50,7 @@ int main() {
             }
 
             else if (str[i] == '*') { // '*'라면 스택의 top이 '*'일 동안 모두 pop
-                while (!S.empty() && (S.top() == "*")) {
+                while (!S.empty() && (S.top() == '*')) {
                     cout << S.top(); S.pop();
                 }
 
