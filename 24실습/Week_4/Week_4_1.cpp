@@ -124,9 +124,9 @@ int main() {
 		}
 
 		else if (cmd == "isEmpty") {
-			string output;
-			output = lq.empty() ? "True" : "False";
-			cout << output << '\n';
+			string result;
+			result = lq.empty() ? "True" : "False";
+			cout << result << '\n';
 		}
 
 		else if (cmd == "frontNsum") {
