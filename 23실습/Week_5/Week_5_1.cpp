@@ -7,12 +7,12 @@ public:
 	Node* prev;
 	Node* next;
 
-	Node() {
+	Node() {    // 기본 생성자
 		this->value = 0;
 		prev = next = nullptr;
 	}
 
-	Node(int value) {
+	Node(int value) {    // 매개변수 생성자
 		this->value = value;
 		prev = next = nullptr;
 	}
@@ -22,9 +22,9 @@ public:
 
 class List {
 private:
-	Node* header;
-	Node* trailer;
-	int s;
+	Node* header;    // 가장 앞 벽
+	Node* trailer;   // 가장 뒤 벽
+	int s;           // 리스트의 크기
 
 public:
 	List() {
