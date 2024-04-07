@@ -40,22 +40,13 @@ public:
 
 	void insert_node(int par_value, int value) {
 		if (find(value, node_list) != -1) {
-			cout << "-1\n";
-			return;
+			cout << "-1\n"; return;
 		}
 
 		int par_idx = find(par_value, node_list);
-
 		if (par_idx == -1) {
-			cout << "-1\n";
-			return;
+			cout << "-1\n"; return;
 		}
-
-		/*
-		if (find(par_value, node_list) == -1) {
-			return;
-		}
-		*/
 
 		Node* par_node = node_list[par_idx];
 		Node* new_node = new Node(value, par_node);
@@ -66,17 +57,13 @@ public:
 
 	void delete_node(int value) {
 		int idx = find(value, node_list);
-
 		if (idx == -1) {
-			cout << "-1\n";
-			return;
+			cout << "-1\n"; return;
 		}
 
 		Node* del_node = node_list[idx];
-
-		if (del_node == root) {
+		if (del_node == root) 
 			return;
-		}
 
 		Node* par_node = del_node->parent;
 
@@ -86,12 +73,7 @@ public:
 		}
 
 		vector<Node*>& child = par_node->child_list;
-
 		child.erase(child.begin() + find(value, child));
-		/*
-		par_node->child_list.erase(par_node->child_list.begin() + 
-			find(value, par_node->child_list));
-		*/
 		node_list.erase(node_list.begin() + idx);
 		delete del_node;
 	}
@@ -100,8 +82,7 @@ public:
 		int idx = find(value, node_list);
 
 		if (idx == -1) {
-			cout << "-1\n";
-			return;
+			cout << "-1\n"; return;
 		}
 
 		Node* cur_node = node_list[idx];
@@ -110,17 +91,13 @@ public:
 
 	void print_child(int value) {
 		int idx = find(value, node_list);
-
 		if (idx == -1) {
-			cout << "-1\n";
-			return;
+			cout << "-1\n"; return;
 		}
 
 		vector<Node*>& child = node_list[idx]->child_list;
-
 		if (child.empty()) {
-			cout << "-1\n";
-			return;
+			cout << "-1\n"; return;
 		}
 
 		for (int i = 0; i < child.size(); i++) {
@@ -131,18 +108,14 @@ public:
 
 	void min_maxChild(int x) {
 		int idx = find(x, node_list);
-
 		if (idx == -1) {
-			cout << "-1\n";
-			return;
+			cout << "-1\n"; return;
 		}
 
 		Node* cur_node = node_list[idx];
 		vector<Node*>& child = cur_node->child_list;
-
 		if (child.size() < 2) {
-			cout << "-1\n";
-			return;
+			cout << "-1\n"; return;
 		}
 
 		int min, max;
@@ -152,12 +125,10 @@ public:
 			if (child[i]->value < min) {
 				min = child[i]->value;
 			}
-
 			if (child[i]->value > max) {
 				max = child[i]->value;
 			}
 		}
-
 		cout << min + max << '\n';
 	}
 };
