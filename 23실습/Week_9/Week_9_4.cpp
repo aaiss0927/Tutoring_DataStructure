@@ -25,7 +25,7 @@ public:
 				p_idx = i;
 			}
 
-			/*else if ((seq[p_idx] % 5 == 1) && (seq[i] % 5 == 0)) {
+			/*else if ((seq[p_idx] % 5 != 0) && (seq[i] % 5 == 0)) {
 				
 			}*/
 
