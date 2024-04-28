@@ -11,7 +11,7 @@ public:
 		seq.push_back(e);
 	}
 
-	int removeMax() {
+	int remove() {
 		int max_idx = 0;
 
 		for (int i = 0; i < seq.size(); i++) {
@@ -46,7 +46,7 @@ int main() {
 		}
 
 		for (int i = 0; i < N; i++) {
-			s.push_back(pq.removeMax());
+			s.push_back(pq.remove());
 			
 			if (s.size() > 1) {
 				sub.push_back(s.front() - s.back());
