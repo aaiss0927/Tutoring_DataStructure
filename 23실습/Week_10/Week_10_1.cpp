@@ -19,12 +19,6 @@ public:
         return (arr.size() - 1 == 0);
     }
 
-    void swap(int idx1, int idx2) {
-        arr[0] = arr[idx1];
-        arr[idx1] = arr[idx2];
-        arr[idx2] = arr[0];
-    }
-
     void insert(int e) {
         arr.push_back(e);
         upHeap(size());
@@ -50,6 +44,12 @@ public:
         downHeap(1);
     }
 
+    void swap(int idx1, int idx2) {
+        arr[0] = arr[idx1];
+        arr[idx1] = arr[idx2];
+        arr[idx2] = arr[0];
+    }
+
     void upHeap(int idx) {
         if (idx == 1) {
             return;
@@ -66,18 +66,15 @@ public:
         int left = 2 * idx; int right = 2 * idx + 1;
         int child;
 
-        if (left > size()) {    // 자식 존재 x
+        if (left > size())    // 자식 존재 x
             return;
-        }
 
-        else if (left == size()) {    // 왼쪽 자식만 존재
+        else if (left == size())    // 왼쪽 자식만 존재
             child = left;
-        }
 
         else {    // 두 자식 모두 존재 - 둘 비교해서 더 작은 자식 선택
             if (arr[left] <= arr[right])
                 child = left;
-
             else
                 child = right;
         }
