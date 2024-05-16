@@ -103,7 +103,10 @@ public:
 
 		if (parNode == nullptr) {
 			root = childNode;
-			root->parent = nullptr;
+			
+			if (root != nullptr) {
+				root->parent = nullptr;
+			}
 		}
 
 		else if (delNode == parNode->left) {
