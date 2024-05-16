@@ -122,7 +122,10 @@ public:
 
 		if (parNode == nullptr) {
 			root = childNode;
-			root->parent = nullptr;
+			
+			if (root != nullptr) {
+				root->parent = nullptr;
+			}
 		}
 
 		else if (delNode == parNode->left) {
@@ -154,7 +157,7 @@ public:
 
 		if (temp == k) {
 			cout << node->key << '\n';
-			temp = -1;
+			temp = k + 1;
 			return;
 		}
 		temp++;
