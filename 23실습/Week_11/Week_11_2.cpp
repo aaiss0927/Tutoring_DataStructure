@@ -88,7 +88,7 @@ public:
 
 		get_depth(newNode);
 	}
-	
+
 	void remove(int key) {
 		Node* delNode = search(root, key);
 		get_depth(delNode);
@@ -122,8 +122,11 @@ public:
 
 		if (parNode == nullptr) {
 			root = childNode;
-			root->parent = nullptr;
+			
+			if (childNode != nullptr) {
+				childNode->parent = nullptr;
 		}
+	}
 
 		else if (delNode == parNode->left) {
 			parNode->left = childNode;
@@ -154,7 +157,7 @@ public:
 
 		if (temp == k) {
 			cout << node->key << '\n';
-			temp = -1;
+			temp = k + 1;
 			return;
 		}
 		temp++;
