@@ -123,11 +123,11 @@ public:
 		if (parNode == nullptr) {
 			root = childNode;
 			
-			if (childNode != nullptr) {
-				childNode->parent = nullptr;
+			if (root != nullptr) {
+				root->parent = nullptr;
+			}
 		}
-	}
-
+		
 		else if (delNode == parNode->left) {
 			parNode->left = childNode;
 
