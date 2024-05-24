@@ -200,7 +200,7 @@ public:
 		int cnt = 0;
 
 		for (int i = 0; i < EdgeMatrix[matrixId].size(); i++) {
-			if (EdgeMatrix[matrixId][i] != nullptr)
+			if (EdgeMatrix[matrixId][i] != nullptr) 
 				cnt++;
 		}
 
