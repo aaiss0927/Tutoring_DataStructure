@@ -198,14 +198,18 @@ public:
 		EdgeMatrix[dstMatrixId][srcMatrixId] = nullptr;
 	}
 
-	void print_Adjacent(int vertexId) {
+	void isAdjacentOdd(int vertexId) {
 		Vertex* curVertex = vList.findVertex(vertexId);
 		int matrixId = curVertex->matrixId;
+		int cnt = 0;
 
 		for (int i = 0; i < EdgeMatrix[matrixId].size(); i++) {
 			if (EdgeMatrix[matrixId][i] != nullptr)
-				cout << vList.findVertex_by_matrixId(i)->vertexId << ' ';
+				cnt++;
 		}
+
+		string result = (cnt % 2) ? "True" : "False";
+		cout << result << ' ' << cnt << '\n';
 	}
 
 	void minEdgeVertex() {
