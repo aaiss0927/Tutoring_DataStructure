@@ -1,9 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int vertex, s, d;
 int max_num;
-
 bool graph[10001][10001];
 
 int main() {
@@ -40,7 +38,7 @@ int main() {
 
         else if (cmd == "eraseVertex") {
             int s; cin >> s;
-            
+
             for (int i = 1; i <= max_num; i++) {
                 graph[s][i] = false;
                 graph[i][s] = false;
