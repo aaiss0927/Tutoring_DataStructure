@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-int vertex, s, d;
 int max_num;
 
 bool graph[10001][10001];
@@ -45,7 +44,7 @@ int main() {
                 cout << "None\n";
                 continue;
             }
-            
+
             graph[s][d] = false;
             graph[d][s] = false;
         }
