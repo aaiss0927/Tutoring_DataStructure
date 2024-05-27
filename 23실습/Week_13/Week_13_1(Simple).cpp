@@ -2,7 +2,6 @@
 using namespace std;
 
 int max_num;
-
 bool graph[10001][10001];
 
 int main() {
