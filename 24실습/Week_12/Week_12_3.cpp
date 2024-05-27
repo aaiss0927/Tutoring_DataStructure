@@ -92,10 +92,10 @@ public:
 		return "None";
 	}
 
-	int vacant(int N) {
+	int vacant() {
 		int cnt = 0;
 
-		for (int i = 0; i < N; i++) {
+		for (int i = 0; i < cap; i++) {
 			if (table[i].valid != ISITEM) {
 				cnt++;
 			}
@@ -128,7 +128,7 @@ int main() {
 		}
 
 		else if (cmd == "vacant") {
-			cout << ht.vacant(N) << '\n';
+			cout << ht.vacant() << '\n';
 		}
 	}
 }
