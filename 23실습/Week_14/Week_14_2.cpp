@@ -6,12 +6,12 @@ vector<int> graph[101];
 bool visited[101];
 int max_num;
 
-void setup() {
+void setup(int C) {
 	for (int i = 0; i < 101; i++) {
 		visited[i] = false;
 	}
 
-	max_num = 0;
+	max_num = C;
 }
 
 void DFS(int C) {
@@ -44,7 +44,7 @@ int main() {
 		for (int i = 0; i < Q; i++) {
 			int C; cin >> C;
 
-			setup();
+			setup(C);
 			visited[C] = true;
 			DFS(C);
 			
