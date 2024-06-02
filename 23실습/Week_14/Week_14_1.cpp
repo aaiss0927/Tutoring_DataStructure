@@ -22,8 +22,8 @@ void DFS(int a, int b) {
 
 	int cur = a;
 
-	for (int i = 0; i < graph[a].size(); i++) {
-		int next = graph[a][i];
+	for (int i = 0; i < graph[cur].size(); i++) {
+		int next = graph[cur][i];
 
 		if (visited[next])
 			continue;
