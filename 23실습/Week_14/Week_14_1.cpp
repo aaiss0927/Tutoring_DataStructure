@@ -15,12 +15,12 @@ void setup() {
 }
 
 void DFS(int a, int b) {
-	if (a == b) {
+	int cur = a;
+	
+	if (cur == b) {
 		cout << cnt << '\n';
 		return;
 	}
-
-	int cur = a;
 
 	for (int i = 0; i < graph[cur].size(); i++) {
 		int next = graph[cur][i];
