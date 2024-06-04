@@ -5,7 +5,7 @@ using namespace std;
 int graph[501][501];
 int score;
 
-void maskAdjacentVertices(int vertexId, vector<bool>& v) {
+void maskAdjacentVertices(int vertexId, vector<bool>& v) { 
 	for (int i = 1; i < 501; i++) {
 		if (graph[vertexId][i] == 1) {
 			v[i] = true;
