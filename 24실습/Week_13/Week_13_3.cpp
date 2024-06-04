@@ -7,7 +7,7 @@ int main() {
     int T; cin >> T;
     bool vertex[10001] = { false, };
 
-    while (T--) {
+    while (T--) { 
         string cmd; cin >> cmd;
 
         if (cmd == "insertVertex") {
