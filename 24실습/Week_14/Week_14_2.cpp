@@ -7,7 +7,7 @@ bool visited[1001];
 bool flag;
 
 void setup() {
-	for (int i = 0; i < 101; i++) {
+	for (int i = 0; i < 1001; i++) {
 		visited[i] = false;
 	}
 	flag = false;
