@@ -5,19 +5,10 @@ using namespace std;
 class Graph {
 private:
 	int vertexList[10000];
-	int cur_v;
-	vector<vector<int>> adjacencyList;
+	int cur = 0;
+	vector<int> adjacencyList[10000];
 
 public:
-	Graph() {
-		for (int i = 0; i < 10000; i++) {
-			vertexList[i] = 0;
-			cur_v = 0;
-		}
-
-		adjacencyList = vector<vector<int>>(10000);
-	}
-
 	int find_array_id(int vertex_id) {
 		for (int i = 0; i < 10000; i++) {
 			if (vertexList[i] == vertex_id)
@@ -37,8 +28,8 @@ public:
 			return;
 		}
 
-		vertexList[cur_v] = s;
-		cur_v++;
+		vertexList[cur] = s;
+		cur++;
 	}
 
 	void eraseVertex(int s) {
@@ -51,11 +42,10 @@ public:
 
 		for (int i = 0; i < adjacencyList[arr_id].size(); i++) {
 			int dst_arr_id = find_array_id(adjacencyList[arr_id][i]);
-			
+
 			for (int j = 0; j < adjacencyList[dst_arr_id].size(); j++) {
-				if (adjacencyList[dst_arr_id][j] == s) {
+				if (adjacencyList[dst_arr_id][j] == s)
 					adjacencyList[dst_arr_id].erase(adjacencyList[dst_arr_id].begin() + j);
-				}
 			}
 		}
 		adjacencyList[arr_id].clear();
@@ -138,18 +128,17 @@ public:
 		}
 
 		int arr_id = find_array_id(s);
-		int cnt = 0, sum = 0;
-
-		for (int i = 0; i < adjacencyList[arr_id].size(); i++) {
-			cnt++;
-			sum += adjacencyList[arr_id][i];
+		if (adjacencyList[arr_id].empty()) {
+			cout << "0 0\n";
+			return;
 		}
 
-		if (cnt == 0)
-			cout << "0 0\n";
+		int sum = 0;
+		for (int i = 0; i < adjacencyList[arr_id].size(); i++)
+			sum += adjacencyList[arr_id][i];
 
-		else
-			cout << cnt << ' ' << sum << '\n';
+		cout << adjacencyList[arr_id].size() << ' ' << sum << '\n';
+			
 	}
 
 	void printAdjMin(int s) {
@@ -159,24 +148,22 @@ public:
 		}
 
 		int arr_id = find_array_id(s);
-		int cnt = 0, mini = 1000000;
+		if (adjacencyList[arr_id].empty()) {
+			cout << "-1\n";
+			return;
+		}
 
+		int mini = 1000000;
 		for (int i = 0; i < adjacencyList[arr_id].size(); i++) {
-			cnt++;
 			mini = min(mini, adjacencyList[arr_id][i]);
 		}
 
-		if (cnt == 0)
-			cout << "-1\n";
-
-		else
-			cout << mini << '\n';
+		cout << mini << '\n';
 	}
 };
 
 int main() {
 	Graph* graph = new Graph[100];
-
 	int N; cin >> N;
 
 	while (N--) {
@@ -184,7 +171,6 @@ int main() {
 
 		if (cmd == "Graph") {
 			int gid; cin >> gid;
-			continue;
 		}
 
 		else if (cmd == "InsertVertex") {
