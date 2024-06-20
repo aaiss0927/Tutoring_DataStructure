@@ -18,10 +18,6 @@ public:
 		return -1;
 	}
 
-	int find_vertex_id(int array_id) {
-		return vertexList[array_id];
-	}
-
 	void insertVertex(int s) {
 		if (find_array_id(s) != -1) {
 			cout << "ERRORCODE 01\n";
